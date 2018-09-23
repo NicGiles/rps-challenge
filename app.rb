@@ -5,7 +5,7 @@ require_relative 'lib/person'
 class Rps < Sinatra::Base
 
 
-  attr_reader :move, :comp_move
+  attr_reader :move, :comp_move, :person
 
   enable :sessions
   set :session_secret, "nothing"
@@ -20,8 +20,11 @@ class Rps < Sinatra::Base
   end
 
   post "/play" do
+    @person = @person
     @move = (params[:move])
     @comp_move = ["Rock", "Paper", "Scissors"].sample
     erb(:play)
   end
+
+
 end

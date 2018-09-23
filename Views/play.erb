@@ -1,12 +1,24 @@
 
-<%= @move %> vs <%= @comp_move %>
 
-<% if @move == "rock" && @comp_move == "scissors"%> You win!!
-<% elsif @move == "scissors" && @comp_move == "rock"%> You win!!
-<% elsif @move == "paper" && @comp_move == "rock"%> You win!!
-<% elsif @move == @comp_move%> Good game, you drew.
-<% else%> You Lose!!
+<center><h1>You went <%= @move %>, The Rock Paper Scissors bot went for <%= @comp_move %> . .<h1>
 
-<% end %>
+<% if @move == "Rock" && @comp_move == "Scissors"%> Well played, you won!!<br>
+<% elsif @move == "Scissors" && @comp_move == "Paper"%> Well played, you won!!<br>
+<% elsif @move == "Paper" && @comp_move == "Rock"%> Well played, you won!!<br>
 
-Well played
+<% elsif @move == @comp_move%><br>
+<center>Well played, you drew.<br>
+<% else%> Well played, but unfortunately you lost!!
+
+<% end %> <br>
+
+Play again? <br>
+
+<form action="/names" method="post">
+  <input type='submit' value=✅ >
+
+    <label for = "again">
+
+  <br>
+
+  <img src="https://goo.gl/Jd3khz"width="75%" height="60%">

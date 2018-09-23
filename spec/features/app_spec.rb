@@ -25,7 +25,16 @@ require 'web_helpers'
       click_button('Draw!')
       expect(page).to have_content "Well played"
     end
+
+
+    feature "Play again 'yes' should allow user to play again" do
+      scenario "Play again? Yes, returns user to RPS options" do
+      sign_in_and_play
+      click_button('Draw!')
+      click_button('✅')
+      expect(page).to have_content "Hi Nic! What's your move, Rock, Paper or Scissors?"
     end
   end
-
+end
+end
 end
