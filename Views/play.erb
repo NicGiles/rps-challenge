@@ -1,9 +1,12 @@
-Hi <%= @person.name %>! What's your move, Rock, Paper or Scissors?
 
-    <label for = "move">
-        <span>
-             <select name="move">
-                  <option value="rock">👊 </option>
-                  <option value="paper">✋ </option>
-                  <option value="scissors">✌️</option>
-        <input type='submit' value=Draw!>
+<%= @move %> vs <%= @comp_move %>
+
+<% if @move == "rock" && @comp_move == "scissors"%> You win!!
+<% elsif @move == "scissors" && @comp_move == "rock"%> You win!!
+<% elsif @move == "paper" && @comp_move == "rock"%> You win!!
+<% elsif @move == @comp_move%> Good game, you drew.
+<% else%> You Lose!!
+
+<% end %>
+
+Well played

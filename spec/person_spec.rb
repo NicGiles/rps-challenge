@@ -8,4 +8,9 @@ RSpec.describe Person do
     expect(subject.name).to eq "Nic"
   end
 
+  it "should know when a player has won" do
+    subject.winner
+    expect(subject.victory).to eq true
+  end
+
 end
